@@ -2,6 +2,8 @@
 
 A WIP [docker app](https://github.com/docker/app) vscode plugin.
 
+<img src="screenshots/main.png" alt="docker app image list" />
+
 ## Features
 
 * [x] list app images
