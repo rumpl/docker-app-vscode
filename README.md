@@ -6,7 +6,7 @@ A WIP [docker app](https://github.com/docker/app) vscode plugin.
 
 ### Listing application images
 
-<img src="screenshots/main.png" alt="docker app image list" />
+<img src="screenshots/image-list.png" alt="docker app image list" />
 
 ```
 $ docker app image ls
