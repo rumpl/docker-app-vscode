@@ -1,6 +1,5 @@
 import * as path from 'path';
 import * as vscode from 'vscode';
-import { throws } from 'assert';
 
 export class DockerAppImage extends vscode.TreeItem {
   contextValue = 'dockerAppImage';
