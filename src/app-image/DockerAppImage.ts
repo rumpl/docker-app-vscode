@@ -7,6 +7,6 @@ export class DockerAppImage extends vscode.TreeItem {
   constructor(name: string) {
     super(name, vscode.TreeItemCollapsibleState.None);
     this.id = name;
-    this.iconPath = path.join(__filename, '..', '..', 'media', 'docker.svg');
+    this.iconPath = path.join(__filename, '..', '..', '..', 'media', 'docker.svg');
   }
 }
