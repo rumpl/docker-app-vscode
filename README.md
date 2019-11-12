@@ -2,6 +2,10 @@
 
 A WIP [docker app](https://github.com/docker/app) vscode plugin.
 
+## Features
+
+### Listing application images
+
 <img src="screenshots/main.png" alt="docker app image list" />
 
 ```
@@ -19,8 +23,7 @@ rumpl/nick           <none> 1d1a57daebbf voting-app
 rumpl/wordpress      1.0.0  3994df978068 wordpress
 ```
 
-## Features
-
+## TODO
 * [x] list app images
 * [ ] install an app
 * [ ] stop an app
