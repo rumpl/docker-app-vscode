@@ -36,12 +36,22 @@
 				"command": "dockerApp.runApp",
 				"title": "Run",
 				"icon": "media/play.svg"
+			},
+			{
+				"command": "dockerApp.rmApp",
+				"title": "Delete",
+				"icon": "media/trash.svg"
 			}
 		],
 		"menus": {
 			"view/item/context": [
 				{
 					"command": "dockerApp.runApp",
+					"when": "view == dockerApp && viewItem == dockerAppImage",
+					"group": "inline"
+				},
+				{
+					"command": "dockerApp.rmApp",
 					"when": "view == dockerApp && viewItem == dockerAppImage",
 					"group": "inline"
 				}

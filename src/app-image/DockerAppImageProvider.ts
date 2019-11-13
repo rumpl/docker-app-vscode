@@ -1,6 +1,5 @@
 import * as vscode from 'vscode';
 import { DockerAppImage } from "./DockerAppImage";
-import * as cp from 'child_process';
 import { ICommand } from '../command/Command';
 
 export class DockerAppImageProvider implements vscode.TreeDataProvider<DockerAppImage> {
@@ -10,7 +9,12 @@ export class DockerAppImageProvider implements vscode.TreeDataProvider<DockerApp
     this.command = command;
   }
 
-  onDidChangeTreeData?: vscode.Event<DockerAppImage | null | undefined> | undefined;
+  _onDidChangeTreeData: vscode.EventEmitter<DockerAppImage> = new vscode.EventEmitter();
+  onDidChangeTreeData: vscode.Event<DockerAppImage> = this._onDidChangeTreeData.event;
+
+  refresh() {
+    this._onDidChangeTreeData.fire();
+  }
 
   getTreeItem(element: DockerAppImage): vscode.TreeItem | Thenable<vscode.TreeItem> {
     return element;

@@ -24,8 +24,11 @@ rumpl/wordpress      1.0.0  3994df978068 wordpress
 ```
 
 ## TODO
+
 * [x] list app images
-* [ ] install an app
+* [X] install an app
+* [ ] list running apps
+* [ ] show information about a running app (ports etc.)
 * [ ] stop an app
-* [ ] delete an app
+* [X] delete an app image
 * [ ] many more

@@ -5,11 +5,16 @@ import { DockerAppImageLifecycle } from './app-image/DockerAppImageLifecycle';
 import { Command } from './command/Command';
 
 export function activate(_: vscode.ExtensionContext) {
-	const lifecycle = new DockerAppImageLifecycle();
 	const command = new Command();
 
+	const lifecycle = new DockerAppImageLifecycle(command);
+	const dataProvider = new DockerAppImageProvider(command);
 	vscode.commands.registerCommand('dockerApp.runApp', (appImage: DockerAppImage) => lifecycle.install(appImage));
-	vscode.window.registerTreeDataProvider('dockerApp', new DockerAppImageProvider(command));
+	vscode.commands.registerCommand('dockerApp.rmApp', async (appImage: DockerAppImage) => {
+		await lifecycle.rm(appImage);
+		dataProvider.refresh();
+	});
+	vscode.window.registerTreeDataProvider('dockerApp', dataProvider);
 }
 
 export function deactivate() { }
